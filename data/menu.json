@@ -1,0 +1,98 @@
+{
+  "categories": [
+    {
+      "id": "etler",
+      "title": "Etler",
+      "items": [
+        { "name": "Bonfile Lokum",        "price": 1399, "kcal": 990 },
+        { "name": "Mantarlı Bonfile",     "price": 1329, "kcal": 900 },
+        { "name": "Karidesli Bonfile",    "price": 1449, "kcal": 805 },
+        { "name": "Antalya Şiş",          "price":  780, "kcal": 820 }
+      ]
+    },
+    {
+      "id": "deniz-urunleri",
+      "title": "Deniz Ürünleri",
+      "items": [
+        { "name": "Karides Tava",   "price": 699, "kcal": 520 },
+        { "name": "Izgara Levrek",  "price": 849, "kcal": 480 },
+        { "name": "Kalamar Tava",   "price": 649, "kcal": 490 },
+        { "name": "Izgara Çupra",   "price": 899, "kcal": 510 }
+      ]
+    },
+    {
+      "id": "extralar",
+      "title": "Ana Yemek Yanı Extralar",
+      "items": [
+        { "name": "Mantar Sos",       "price":  99, "kcal": null, "portion": "100 gr" },
+        { "name": "Sebze Garnitür",   "price":  89, "kcal": null, "portion": "150 gr" },
+        { "name": "Basmati Pilav",    "price":  69, "kcal": null },
+        { "name": "Yoğurt Süzme",     "price":  79, "kcal": null, "portion": "150 gr" },
+        { "name": "Patates Püresi",   "price":  74, "kcal": null, "portion": "150 gr" },
+        { "name": "Sos Sweet Chili",  "price":  34, "kcal": null, "portion": "40 gr"  }
+      ]
+    },
+    {
+      "id": "salatalar",
+      "title": "Salatalar",
+      "items": [
+        { "name": "Sezar Salata",         "price": 599, "kcal": 760 },
+        { "name": "Avokado Salatası",     "price": 589, "kcal": 790 },
+        { "name": "Tavuklu Sezar Salata", "price": 619, "kcal": 860 },
+        { "name": "Akdeniz Salata",       "price": 399, "kcal": 510 }
+      ]
+    },
+    {
+      "id": "tatlilar",
+      "title": "Tatlılar",
+      "items": [
+        { "name": "Magnolia",               "price": 299, "kcal": 300 },
+        { "name": "Yaban Mersinli Granola", "price": 399, "kcal": 370 },
+        { "name": "San Sebastian",          "price": 349, "kcal": 795 },
+        { "name": "Tiramisu",              "price": 399, "kcal": 400 },
+        { "name": "Glutensiz Brownie",     "price": 369, "kcal": 455 },
+        { "name": "Meyve Tabağı",          "price": 359, "kcal": 430 }
+      ]
+    },
+    {
+      "id": "soguk-icecekler",
+      "title": "Soğuk İçecekler",
+      "items": [
+        { "name": "Coca Cola Şişe",        "price": 155, "kcal": 140,  "portion": "300 ml" },
+        { "name": "Coca Cola Zero Şişe",   "price": 155, "kcal": 1,    "portion": "300 ml" },
+        { "name": "Fanta Şişe",            "price": 155, "kcal": 160,  "portion": "300 ml" },
+        { "name": "Sprite Şişe",           "price": 155, "kcal": 38,   "portion": "300 ml" },
+        { "name": "Cappy Şişe",            "price": 160, "kcal": 124,  "portion": "250 ml" },
+        { "name": "Fuse Tea Şişe",         "price": 145, "kcal": 73,   "portion": "250 ml" },
+        { "name": "Damla Premium Soda",    "price": 145, "kcal": null,  "portion": "330 ml" },
+        { "name": "Ayran Sütaş",           "price": 115, "kcal": 80,   "portion": "450 ml" },
+        { "name": "Taze Naneli Ayran",     "price": 139, "kcal": 80,   "portion": "450 ml" },
+        { "name": "Red Bull Energy Drink", "price": 185, "kcal": 115,  "portion": "250 ml" },
+        { "name": "Küçük Su (Cam)",        "price":  89, "kcal": null,  "portion": "330 ml" },
+        { "name": "Büyük Su (Cam)",        "price": 165, "kcal": null,  "portion": "750 ml" },
+        { "name": "Iced Café Latte",       "price": 239, "kcal": null },
+        { "name": "Iced Americano",        "price": 209, "kcal": null },
+        { "name": "Iced Filter Coffee",    "price": 205, "kcal": null },
+        { "name": "Iced Oreo Coffee",      "price": 259, "kcal": null },
+        { "name": "Caramel Frappé",        "price": 269, "kcal": null },
+        { "name": "Blueberry Frappé",      "price": 239, "kcal": null }
+      ]
+    },
+    {
+      "id": "sicak-icecekler",
+      "title": "Sıcak İçecekler",
+      "items": [
+        { "name": "Türk Kahvesi",             "price": 140, "kcal": null },
+        { "name": "Damla Sakızlı Türk Kahvesi","price": 170, "kcal": null },
+        { "name": "Americano",               "price": 209, "kcal": null },
+        { "name": "Flat White",              "price": 229, "kcal": null },
+        { "name": "Filtre Kahve",            "price": 185, "kcal": null },
+        { "name": "Matcha Latte",            "price": 225, "kcal": null },
+        { "name": "Cappuccino",              "price": 205, "kcal": null },
+        { "name": "Sıcak Çikolata",          "price": 199, "kcal": null },
+        { "name": "Salep",                   "price": 189, "kcal": null },
+        { "name": "Chai Tea Latte",          "price": 219, "kcal": null }
+      ]
+    }
+  ]
+}

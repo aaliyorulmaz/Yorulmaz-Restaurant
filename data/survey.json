@@ -1,0 +1,38 @@
+{
+  "_not": "ÖRNEK VERİ. Kendi anket JSON dosyanla değiştirilecek. Anahtarı '_' ile başlayan alanlar sitede kullanılmaz.",
+  "title": "Deneyiminizi değerlendirin",
+  "intro": "Her soruyu 1 ile 5 arasında puanlayın.",
+  "scale": {
+    "labels": ["Çok kötü", "Kötü", "Orta", "İyi", "Çok iyi"]
+  },
+  "categories": [
+    {
+      "id": "lezzet",
+      "title": "Lezzet",
+      "description": "Yemeklerin tadı ve sunumu.",
+      "questions": [
+        { "id": "pisirme", "text": "Etin pişirme derecesi" },
+        { "id": "genel-lezzet", "text": "Genel lezzet" }
+      ]
+    },
+    {
+      "id": "servis",
+      "title": "Servis",
+      "description": "Karşılama ve ilgi.",
+      "questions": [
+        { "id": "hiz", "text": "Servis hızı" },
+        { "id": "ilgi", "text": "Personelin ilgisi" }
+      ]
+    },
+    {
+      "id": "ortam",
+      "title": "Ortam",
+      "description": "Mekân ve temizlik.",
+      "questions": [
+        { "id": "atmosfer", "text": "Mekânın atmosferi" },
+        { "id": "temizlik", "text": "Temizlik" }
+      ]
+    }
+  ],
+  "commentLabel": "Eklemek istedikleriniz"
+}

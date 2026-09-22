@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1789985169667",
+    "submittedAt": "2026-09-21T10:06:09.667Z",
+    "answers": {
+      "lezzet.pisirme": 4,
+      "lezzet.genel-lezzet": 5,
+      "servis.hiz": 4,
+      "servis.ilgi": 4,
+      "ortam.atmosfer": 3,
+      "ortam.temizlik": 4
+    },
+    "comment": "",
+    "averageScore": 4
+  },
+  {
+    "id": "1790063974141",
+    "submittedAt": "2026-09-22T07:59:34.140Z",
+    "answers": {
+      "lezzet.pisirme": 2,
+      "lezzet.genel-lezzet": 4,
+      "servis.ilgi": 4,
+      "servis.hiz": 5,
+      "ortam.temizlik": 4,
+      "ortam.atmosfer": 3
+    },
+    "comment": "Aydınlatmalar daha iyi olabilirdi hizmet güzeldi teşekkür ederiz.",
+    "averageScore": 3.7
+  },
+  {
+    "id": "1790064058309",
+    "submittedAt": "2026-09-22T08:00:58.308Z",
+    "answers": {
+      "lezzet.pisirme": 5,
+      "lezzet.genel-lezzet": 4,
+      "servis.hiz": 5,
+      "servis.ilgi": 4,
+      "ortam.atmosfer": 5,
+      "ortam.temizlik": 5
+    },
+    "comment": "",
+    "averageScore": 4.7
+  },
+  {
+    "id": "1790064456288",
+    "submittedAt": "2026-09-22T08:07:36.288Z",
+    "answers": {
+      "lezzet.pisirme": 4,
+      "lezzet.genel-lezzet": 4,
+      "servis.hiz": 3,
+      "servis.ilgi": 2,
+      "ortam.atmosfer": 4,
+      "ortam.temizlik": 3
+    },
+    "comment": "Personelin yüzü gülmeli ortamın enerjisinü düşürüyorlar.",
+    "averageScore": 3.3
+  },
+  {
+    "id": "1790065269658",
+    "submittedAt": "2026-09-22T08:21:09.650Z",
+    "answers": {
+      "lezzet.pisirme": 4,
+      "lezzet.genel-lezzet": 3,
+      "servis.hiz": 5,
+      "servis.ilgi": 4,
+      "ortam.atmosfer": 4,
+      "ortam.temizlik": 4
+    },
+    "comment": "xasa\n",
+    "averageScore": 4
+  }
+]

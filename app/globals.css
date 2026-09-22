@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   TEMA: renkler ve yazı tipleri burada.
+   Tailwind bunlardan sınıf üretir: --color-page  ->  bg-page, text-page ...
+   ------------------------------------------------------------------ */
+@theme {
+  /* Koyu bölümlerin zemini */
+  --color-page: #131110;   /* ana koyu zemin (hero, hakkımızda, iletişim) */
+  --color-panel: #1d1a18;  /* menü bölümünün zemini */
+  --color-glow: #34302b;   /* hero'nun sol üstündeki hafif aydınlık */
+
+  /* Açık zemin ve yazılar */
+  --color-bone: #efe6d8;   /* açık zemin (anket bölümü) ve koyu zemindeki yazı */
+  --color-ink: #131110;    /* açık zemindeki yazı (page ile aynı tutulur) */
+
+  /* Vurgular */
+  --color-brass: #c99b5c;       /* koyu zeminde vurgu */
+  --color-brass-deep: #7a501b;  /* açık zeminde vurgu (yıldızlar) */
+  --color-danger: #a11f26;      /* hata mesajı */
+
+  /* Arka planı değiştirmek için sadece --color-page, --color-panel, --color-glow
+     ve --color-ink değerlerini aşağıdakilerden biriyle değiştir:
+
+     Koyu yeşil:  page #0f1a15   panel #16241d   glow #24402f   ink #0f1a15
+     Lacivert:    page #0e1522   panel #15202f   glow #23375a   ink #0e1522
+     Bordo (ilk sürüm): page #170b0d   panel #2b1114   glow #4a1b21   ink #170b0d
+  */
+
+  --font-display: "Fraunces Variable", Georgia, serif;
+  --font-body: "Manrope Variable", system-ui, sans-serif;
+
+  /* Hero açılış animasyonu */
+  --animate-rise: rise 1s cubic-bezier(0.2, 0.7, 0.1, 1) both;
+  --animate-fade: fade 0.8s ease both;
+
+  @keyframes rise {
+    from { translate: 0 105%; }
+    to   { translate: 0 0; }
+  }
+  @keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-page font-body leading-relaxed text-bone;
+  }
+  address {
+    @apply not-italic;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brass;
+  }
+}
+
+/* Birden fazla yerde tekrar eden stiller */
+@layer components {
+  /* Sayfa genişliği: içerik ortada, kenarlardan boşluklu */
+  .wrap {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .section-title {
+    @apply font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-none font-semibold tracking-tight;
+  }
+
+  /* Butonlar */
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center rounded-full border border-transparent px-6 py-3 text-sm font-semibold transition-colors;
+  }
+  .btn-brass {
+    @apply bg-brass text-ink hover:bg-bone;
+  }
+  .btn-ghost {
+    @apply border-bone/45 text-bone hover:border-bone hover:bg-bone/10;
+  }
+  .btn-dark {
+    @apply bg-ink text-bone hover:bg-panel disabled:cursor-not-allowed disabled:opacity-60;
+  }
+}
