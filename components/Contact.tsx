@@ -45,7 +45,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* Gömülü Harita */}
         <div className="mt-12">
           <div className="overflow-hidden rounded-2xl border border-bone/10 shadow-lg">
             <iframe
@@ -65,17 +64,17 @@ export default function Contact() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-[#4285F4] px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#2b6de8]"
             >
-              <svg className="size-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="size-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
               </svg>
-              Google Haritalar'da Görüntüle
+              Google Haritalar&apos;da Görüntüle
             </a>
 
             
               href="#rezervasyon"
               className="inline-flex items-center gap-2 rounded-lg bg-brass px-5 py-2.5 text-sm font-semibold text-ink shadow transition hover:bg-bone"
             >
-              <svg className="size-5 fill-none stroke-current" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="size-5 fill-none stroke-current" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                 <rect x="3" y="4" width="18" height="18" rx="2" />
                 <path d="M16 2v4M8 2v4M3 10h18" />
               </svg>

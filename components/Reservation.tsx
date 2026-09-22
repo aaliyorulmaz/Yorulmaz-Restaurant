@@ -49,15 +49,18 @@ export default function Reservation() {
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 rounded-lg bg-[#4285F4] px-5 py-2.5 text-sm font-semibold text-white shadow transition hover:bg-[#2b6de8]"
             >
-              <svg className="size-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="size-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
               </svg>
-              Google Haritalar'da Konumumuzu Görün
+              Google Haritalar&apos;da Konumumuzu Görün
             </a>
             <div className="mt-4">
               <button
                 className="btn btn-brass"
-                onClick={() => { setStatus("idle"); setForm({ name: "", date: "", time: "", notes: "" }); }}
+                onClick={() => {
+                  setStatus("idle");
+                  setForm({ name: "", date: "", time: "", notes: "" });
+                }}
               >
                 Yeni Rezervasyon
               </button>
@@ -73,7 +76,7 @@ export default function Reservation() {
       <div className="wrap max-w-xl">
         <h2 className="section-title">Rezervasyon</h2>
         <p className="mt-2 flex items-center gap-1.5 text-sm text-bone/60">
-          <svg className="size-4 shrink-0 text-[#4285F4]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg className="size-4 shrink-0 text-[#4285F4]" fill="currentColor" viewBox="0 0 24 24">
             <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
           </svg>
           Konyaaltı Atatürk Bulvarı, Antalya
@@ -86,8 +89,12 @@ export default function Reservation() {
               İsim Soyisim <span className="text-brass">*</span>
             </label>
             <input
-              id="name" name="name" type="text" required
-              value={form.name} onChange={handleChange}
+              id="name"
+              name="name"
+              type="text"
+              required
+              value={form.name}
+              onChange={handleChange}
               placeholder="Adınız Soyadınız"
               className="w-full rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone placeholder:text-bone/40 focus-visible:border-brass focus-visible:outline-none"
             />
@@ -99,8 +106,13 @@ export default function Reservation() {
                 Tarih <span className="text-brass">*</span>
               </label>
               <input
-                id="date" name="date" type="date" required
-                min={today} value={form.date} onChange={handleChange}
+                id="date"
+                name="date"
+                type="date"
+                required
+                min={today}
+                value={form.date}
+                onChange={handleChange}
                 className="w-full rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone focus-visible:border-brass focus-visible:outline-none"
               />
             </div>
@@ -109,9 +121,14 @@ export default function Reservation() {
                 Saat <span className="text-brass">*</span>
               </label>
               <input
-                id="time" name="time" type="time" required
-                min="12:00" max="23:30"
-                value={form.time} onChange={handleChange}
+                id="time"
+                name="time"
+                type="time"
+                required
+                min="12:00"
+                max="23:30"
+                value={form.time}
+                onChange={handleChange}
                 className="w-full rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone focus-visible:border-brass focus-visible:outline-none"
               />
             </div>
@@ -122,8 +139,11 @@ export default function Reservation() {
               Özel İstekler / Notlar
             </label>
             <textarea
-              id="notes" name="notes" rows={4}
-              value={form.notes} onChange={handleChange}
+              id="notes"
+              name="notes"
+              rows={4}
+              value={form.notes}
+              onChange={handleChange}
               placeholder="Doğum günü, alerji, özel istek..."
               className="w-full resize-y rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone placeholder:text-bone/40 focus-visible:border-brass focus-visible:outline-none"
             />
