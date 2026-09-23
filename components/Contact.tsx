@@ -33,13 +33,17 @@ export default function Contact() {
               href="https://instagram.com/yorulmazetrestaurant"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-bone/75 hover:text-bone transition-colors"
-            >
-              <svg viewBox="0 0 24 24" className="size-5 fill-none stroke-current" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-              </svg>
+              <a 
+  href="#" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className="flex items-center gap-2 text-bone/75 hover:text-bone transition-colors"
+>
+  <svg viewBox="0 0 24 24" className="size-5 fill-none stroke-current" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+  </svg>
               @yorulmazetrestaurant
             </a>
           </div>
