@@ -71,6 +71,7 @@ export default function Reservation() {
               En kısa sürede sizi arayarak konfirme edeceğiz.
             </p>
             
+            <a
               href="https://www.google.com/maps/search/?api=1&query=Atat%C3%BCrk+Bulvar%C4%B1+Konyaalt%C4%B1+Antalya"
               target="_blank"
               rel="noopener noreferrer"
