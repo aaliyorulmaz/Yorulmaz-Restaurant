@@ -5,7 +5,7 @@ import { useState, type FormEvent } from "react";
 type Status = "idle" | "sending" | "sent" | "error";
 
 export default function Reservation() {
-  const [form, setForm] = useState({ name: "", date: "", time: "", notes: "" });
+  const [form, setForm] = useState({ name: "", date: "", time: "", notes: "", adult: 1, child: 0, baby: 0 });
   const [status, setStatus] = useState<Status>("idle");
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -101,6 +101,34 @@ export default function Reservation() {
               className="w-full rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone placeholder:text-bone/40 focus-visible:border-brass focus-visible:outline-none"
             />
           </div>
+
+          {/* Kişi sayısı */}
+          <div className="grid grid-cols-3 gap-3">
+            {(["adult", "child", "baby"] as const).map((type) => {
+              const labels = { adult: "Yetişkin", child: "Çocuk", baby: "Bebek" };
+              return (
+                <div key={type}>
+                  <label htmlFor={type} className="mb-1.5 block text-sm font-semibold">
+                    {labels[type]}
+                  </label>
+                  <select
+                    id={type}
+                    name={type}
+                    value={form[type]}
+                    onChange={handleChange}
+                    className="w-full rounded-lg border border-bone/20 bg-page px-3 py-3 text-bone focus-visible:border-brass focus-visible:outline-none"
+                  >
+                    {Array.from({ length: type === "adult" ? 20 : 11 }, (_, i) => (
+                      <option key={i} value={i}>{i}</option>
+                    ))}
+                  </select>
+                </div>
+              );
+            })}
+          </div>
+
+
+
 
           <div className="grid grid-cols-2 gap-4">
             <div>
