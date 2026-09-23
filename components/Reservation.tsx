@@ -1,15 +1,41 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ChangeEvent } from "react";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
+type FormState = {
+  name: string;
+  date: string;
+  time: string;
+  notes: string;
+  adult: number;
+  child: number;
+  baby: number;
+};
+
+const EMPTY_FORM: FormState = {
+  name: "",
+  date: "",
+  time: "",
+  notes: "",
+  adult: 1,
+  child: 0,
+  baby: 0,
+};
+
 export default function Reservation() {
-  const [form, setForm] = useState({ name: "", date: "", time: "", notes: "", adult: 1, child: 0, baby: 0 });
+  const [form, setForm] = useState<FormState>(EMPTY_FORM);
   const [status, setStatus] = useState<Status>("idle");
 
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  function handleTextChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
+  }
+
+  function handleSelectChange(e: ChangeEvent<HTMLSelectElement>) {
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: Number(value) }));
   }
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -28,6 +54,7 @@ export default function Reservation() {
   }
 
   const today = new Date().toISOString().split("T")[0];
+  const totalGuests = form.adult + form.child + form.baby;
 
   if (status === "sent") {
     return (
@@ -44,7 +71,6 @@ export default function Reservation() {
               En kısa sürede sizi arayarak konfirme edeceğiz.
             </p>
             
-            <a
               href="https://www.google.com/maps/search/?api=1&query=Atat%C3%BCrk+Bulvar%C4%B1+Konyaalt%C4%B1+Antalya"
               target="_blank"
               rel="noopener noreferrer"
@@ -55,15 +81,8 @@ export default function Reservation() {
               </svg>
               Google Haritalar&apos;da Konumumuzu Görün
             </a>
-            
             <div className="mt-4">
-              <button
-                className="btn btn-brass"
-                onClick={() => {
-                  setStatus("idle");
-                  setForm({ name: "", date: "", time: "", notes: "" });
-                }}
-              >
+              <button className="btn btn-brass" onClick={() => setForm(EMPTY_FORM)}>
                 Yeni Rezervasyon
               </button>
             </div>
@@ -86,94 +105,109 @@ export default function Reservation() {
         <p className="mt-3 text-bone/75">Bilgilerinizi girin, sizi arayarak konfirme edelim.</p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+          {/* İsim */}
           <div>
-            <label htmlFor="name" className="mb-1.5 block text-sm font-semibold">
+            <label htmlFor="res-name" className="mb-1.5 block text-sm font-semibold">
               İsim Soyisim <span className="text-brass">*</span>
             </label>
             <input
-              id="name"
+              id="res-name"
               name="name"
               type="text"
               required
               value={form.name}
-              onChange={handleChange}
+              onChange={handleTextChange}
               placeholder="Adınız Soyadınız"
               className="w-full rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone placeholder:text-bone/40 focus-visible:border-brass focus-visible:outline-none"
             />
           </div>
 
           {/* Kişi sayısı */}
-          <div className="grid grid-cols-3 gap-3">
-            {(["adult", "child", "baby"] as const).map((type) => {
-              const labels = { adult: "Yetişkin", child: "Çocuk", baby: "Bebek" };
-              return (
-                <div key={type}>
-                  <label htmlFor={type} className="mb-1.5 block text-sm font-semibold">
-                    {labels[type]}
-                  </label>
-                  <select
-                    id={type}
-                    name={type}
-                    value={form[type]}
-                    onChange={handleChange}
-                    className="w-full rounded-lg border border-bone/20 bg-page px-3 py-3 text-bone focus-visible:border-brass focus-visible:outline-none"
-                  >
-                    {Array.from({ length: type === "adult" ? 20 : 11 }, (_, i) => (
-                      <option key={i} value={i}>{i}</option>
-                    ))}
-                  </select>
-                </div>
-              );
-            })}
+          <div>
+            <p className="mb-2 text-sm font-semibold">
+              Kişi Sayısı{" "}
+              {totalGuests > 0 && (
+                <span className="font-normal text-bone/50">({totalGuests} kişi)</span>
+              )}
+            </p>
+            <div className="grid grid-cols-3 gap-3">
+              {(["adult", "child", "baby"] as const).map((type) => {
+                const labels: Record<typeof type, string> = {
+                  adult: "Yetişkin",
+                  child: "Çocuk",
+                  baby: "Bebek",
+                };
+                const max = type === "adult" ? 20 : 10;
+                return (
+                  <div key={type}>
+                    <label htmlFor={`res-${type}`} className="mb-1 block text-xs text-bone/60">
+                      {labels[type]}
+                    </label>
+                    <select
+                      id={`res-${type}`}
+                      name={type}
+                      value={form[type]}
+                      onChange={handleSelectChange}
+                      className="w-full rounded-lg border border-bone/20 bg-page px-3 py-3 text-bone focus-visible:border-brass focus-visible:outline-none"
+                    >
+                      {Array.from({ length: max + 1 }, (_, i) => (
+                        <option key={i} value={i}>
+                          {i}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
-
-
-
+          {/* Tarih + Saat */}
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <label htmlFor="date" className="mb-1.5 block text-sm font-semibold">
+              <label htmlFor="res-date" className="mb-1.5 block text-sm font-semibold">
                 Tarih <span className="text-brass">*</span>
               </label>
               <input
-                id="date"
+                id="res-date"
                 name="date"
                 type="date"
                 required
                 min={today}
                 value={form.date}
-                onChange={handleChange}
+                onChange={handleTextChange}
                 className="w-full rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone focus-visible:border-brass focus-visible:outline-none"
               />
             </div>
             <div>
-              <label htmlFor="time" className="mb-1.5 block text-sm font-semibold">
+              <label htmlFor="res-time" className="mb-1.5 block text-sm font-semibold">
                 Saat <span className="text-brass">*</span>
               </label>
               <input
-                id="time"
+                id="res-time"
                 name="time"
                 type="time"
                 required
                 min="12:00"
                 max="23:30"
                 value={form.time}
-                onChange={handleChange}
+                onChange={handleTextChange}
                 className="w-full rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone focus-visible:border-brass focus-visible:outline-none"
               />
             </div>
           </div>
 
+          {/* Notlar */}
           <div>
-            <label htmlFor="notes" className="mb-1.5 block text-sm font-semibold">
+            <label htmlFor="res-notes" className="mb-1.5 block text-sm font-semibold">
               Özel İstekler / Notlar
             </label>
             <textarea
-              id="notes"
+              id="res-notes"
               name="notes"
               rows={4}
               value={form.notes}
-              onChange={handleChange}
+              onChange={handleTextChange}
               placeholder="Doğum günü, alerji, özel istek..."
               className="w-full resize-y rounded-lg border border-bone/20 bg-page px-4 py-3 text-bone placeholder:text-bone/40 focus-visible:border-brass focus-visible:outline-none"
             />
