@@ -29,21 +29,17 @@ export default function Contact() {
 
           <div>
             <h3 className="mb-2 font-display text-xl font-semibold text-brass">Instagram</h3>
-            
+            <a 
               href="https://instagram.com/yorulmazetrestaurant"
               target="_blank"
               rel="noopener noreferrer"
-              <a 
-  href="#" 
-  target="_blank" 
-  rel="noopener noreferrer"
-  className="flex items-center gap-2 text-bone/75 hover:text-bone transition-colors"
->
-  <svg viewBox="0 0 24 24" className="size-5 fill-none stroke-current" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="2" y="2" width="20" height="20" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
-  </svg>
+              className="flex items-center gap-2 text-bone/75 hover:text-bone transition-colors"
+            >
+              <svg viewBox="0 0 24 24" className="size-5 fill-none stroke-current" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" />
+              </svg>
               @yorulmazetrestaurant
             </a>
           </div>
@@ -62,7 +58,7 @@ export default function Contact() {
           </div>
 
           <div className="mt-4 flex flex-wrap gap-3">
-            
+            <a
               href="https://www.google.com/maps/search/?api=1&query=Atat%C3%BCrk+Bulvar%C4%B1+Konyaalt%C4%B1+Antalya"
               target="_blank"
               rel="noopener noreferrer"
@@ -74,7 +70,7 @@ export default function Contact() {
               Google Haritalar&apos;da Görüntüle
             </a>
 
-            
+            <a
               href="#rezervasyon"
               className="inline-flex items-center gap-2 rounded-lg bg-brass px-5 py-2.5 text-sm font-semibold text-ink shadow transition hover:bg-bone"
             >
